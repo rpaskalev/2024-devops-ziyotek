@@ -1,36 +1,43 @@
-resource "aws_vpc" "ziyo_vpc" {
-  cidr_block       = "10.10.0.0/16"
-
+# Create a VPC
+resource "aws_vpc" "homework-vpc" {
+  cidr_block = "192.168.0.0/16"
   tags = {
-    Terraform = "true"
-    Name      = "Ziyo-2024-VPC"
+    Name  = "homework-vpc"
+    owner = "ferdows"
   }
 }
 
-resource "aws_internet_gateway" "gw" {
-  vpc_id = aws_vpc.ziyo_vpc.id
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.homework-vpc.id
 
   tags = {
-    Terraform = "true"
+    Name  = "my-igw"
+    owner = "ferdows"
   }
 }
 
-resource "aws_route_table" "ziyo_rt" {
-  vpc_id = aws_vpc.ziyo_vpc.id
+resource "aws_route_table" "homework-rt" {
+  vpc_id = aws_vpc.homework-vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.gw.id
+    gateway_id = aws_internet_gateway.igw.id
   }
-
 
   tags = {
-    Terraform = "true"
-    Name = "ziyo-2024"
+    Name  = "homework-rt"
+    owner = "ferdows"
   }
 }
 
-resource "aws_route_table_association" "ziyo_a" {
-  subnet_id      = aws_subnet.ziyo_subnet_public.id
-  route_table_id = aws_route_table.ziyo_rt.id
+# Route Table association with subnets
+resource "aws_route_table_association" "rt" {
+  subnet_id      = aws_subnet.public-subnet.id
+  route_table_id = aws_route_table.homework-rt.id
 }
+
+resource "aws_route_table_association" "rt-1" {
+  subnet_id      = aws_subnet.private-subnet.id
+  route_table_id = aws_route_table.homework-rt.id
+}
+
