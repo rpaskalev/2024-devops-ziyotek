@@ -4,7 +4,7 @@ resource "aws_subnet" "ziyo_subnet_public" {
 
   tags = {
     Terraform = "True"
-    Name    = "Public"
+    Name      = "Public"
   }
 }
 
@@ -14,6 +14,6 @@ resource "aws_subnet" "ziyo_subnet_private" {
 
   tags = {
     Terraform = "True"
-    Name    = "private"
+    Name      = "private"
   }
 }

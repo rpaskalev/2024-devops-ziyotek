@@ -1,5 +1,5 @@
 resource "aws_vpc" "ziyo_vpc" {
-  cidr_block       = "10.10.0.0/16"
+  cidr_block = "10.10.0.0/16"
 
   tags = {
     Terraform = "true"
@@ -26,7 +26,7 @@ resource "aws_route_table" "ziyo_rt" {
 
   tags = {
     Terraform = "true"
-    Name = "ziyo-2024"
+    Name      = "ziyo-2024"
   }
 }
 
