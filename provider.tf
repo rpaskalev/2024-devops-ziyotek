@@ -1,21 +1,40 @@
-provider "aws" {
-  region = "us-east-1"
-}
+provider "aws" {   
 
-# terraform {
-    # required_providers {
-    #   aws = {
-    #     source = "hashicorp/aws
-    #     version = "~> 3.45"
-    #   }
-    # }
+ region = "us-east-1"   
 
-#   backend "s3" {
-#     bucket = "rady-bucket-1-0-0-0"
-#     key    = "terraform-state" #a folder
-#     region = "us-east-1"
-#     dynamodb_table = "terraform-lock"
-#     encrypt = true
-#   }
-# }
+  
 
+}   
+  terraform {    
+
+  
+
+ required_providers {   
+
+ aws = {   
+
+  source ="hashicorp/aws"   
+
+ version = "~> 3.45"   
+
+  }   
+
+ }   
+
+   backend "s3" {  
+
+   bucket = "s3aziza2"  
+
+  key    = "state-remote"  
+
+  region = "us-east-1"  
+
+   dynamodb_table = "terraform-lock1" 
+
+   encrypt = true 
+
+  } 
+
+  }  
+
+ 
