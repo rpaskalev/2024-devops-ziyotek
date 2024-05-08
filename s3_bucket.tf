@@ -17,7 +17,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "my_hw_bucket" {
   }
 }
 resource "aws_s3_bucket_object_lock_configuration" "my_hw_bucket" {
-  bucket = aws_s3_bucket.my_hw_bucket.id
+  bucket              = aws_s3_bucket.my_hw_bucket.id
   object_lock_enabled = "Enabled"
   rule {
     default_retention {
