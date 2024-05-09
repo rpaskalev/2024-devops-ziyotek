@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "ziyotek_bucket" {
-  bucket = "your-name-devops-bucket"
+  bucket = "ziyotek-bucket-sun42"
 
   tags = {
     Name        = "My bucket "
