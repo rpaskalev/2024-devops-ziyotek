@@ -24,7 +24,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
 
 resource "aws_vpc_security_group_ingress_rule" "allow_postgres" {
   security_group_id = aws_security_group.ziyo_security_group.id
-  cidr_ipv4         = aws_vpc.ziyo_vpc.cidr_block
+  `         = aws_vpc.ziyo_vpc.cidr_block
   from_port         = 5432
   ip_protocol       = "tcp"
   to_port           = 5432

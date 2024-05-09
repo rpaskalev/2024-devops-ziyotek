@@ -1,10 +1,7 @@
 resource "aws_s3_bucket" "ziyotek_bucket" {
-  bucket = "your-name-devops-bucket"
+  bucket = var.s3_bucket_name
 
-  tags = {
-    Name        = "My bucket "
-    Environment = "Dev"
-  }
+  tags = var.s3_tag
 }
 
 //versioning 
@@ -24,7 +21,7 @@ resource "aws_s3_bucket_object_lock_configuration" "ziyotek_bucket" {
   rule {
     default_retention {
       mode = "COMPLIANCE"
-      days = 5
+      days = var.days_retention
     }
   }
 }
