@@ -1,12 +1,13 @@
-resource "aws_instance" "web" {
-  ami = "ami-07caf09b362be10b8"
-
+resource "aws_instance" "web_server1" {
+  ami                         = "ami-07caf09b362be10b8"
   subnet_id                   = aws_subnet.ziyo_subnet_public.id
+  vpc_security_group_ids      = [aws_security_group.ziyo_security_group.id]
+  associate_public_ip_address = true
+  instance_type               = "t2.micro"
+  #key_name                    = "ferro-key.pem"
 
-  key_name      = "radostinpaskalev_key"
-  instance_type = "t2.micro"
-associate_public_ip_address = true
-  # Security group must be declared in the network_interface_id block if we are adding that parameter.
-  vpc_security_group_ids = [aws_security_group.allow_tls.id]
 
-}
+  tags = {
+    Name = "web_server1"
+  }
+}  
