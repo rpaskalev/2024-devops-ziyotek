@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "ziyotek_bucket" {
-  bucket = "ziyotek-bucket-sun42"
+  bucket = var.s3_bucket_name
 
   tags = {
     Name        = "My bucket "
@@ -42,8 +42,8 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "s3_encryption" {
   }
 }
 
-resource "aws_s3_bucket_acl" "ziyotek_bucket" {
-  bucket = aws_s3_bucket.ziyotek_bucket.id
-  acl    = "public-read"
-}
+# resource "aws_s3_bucket_acl" "ziyotek_bucket" {
+#   bucket = aws_s3_bucket.ziyotek_bucket.id
+#   acl    = "public-read"
+# }
 
