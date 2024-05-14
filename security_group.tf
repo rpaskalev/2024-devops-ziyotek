@@ -1,5 +1,5 @@
 resource "aws_security_group" "ziyo_security_group" {
-  name        = "ziyo_security_group"
+  name        = var.security_groupname
   description = "Allow web inbound traffic and all outbound traffic"
   vpc_id      = aws_vpc.ziyo_vpc.id
 
