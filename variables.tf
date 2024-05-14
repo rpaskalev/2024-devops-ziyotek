@@ -31,7 +31,7 @@ variable "associate_public_ip_address" {
 
 variable "additional_sec_group" {
   type    = string
-  default = ""
+  default = var.additional_sec_group
 }
 
 variable "ebs_optimize" {
