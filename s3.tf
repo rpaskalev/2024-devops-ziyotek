@@ -1,9 +1,9 @@
 resource "aws_s3_bucket" "ziyotek_bucket" {
-  bucket = "your-name-devops-bucket"
+  bucket = var.bucket_name
 
   tags = {
-    Name        = "My bucket "
-    Environment = "Dev"
+    Name        = var.bucket_tag.name
+    Environment = var.bucket_tag.environment
   }
 }
 
@@ -12,7 +12,7 @@ resource "aws_s3_bucket" "ziyotek_bucket" {
 resource "aws_s3_bucket_versioning" "s3_versioning" {
   bucket = aws_s3_bucket.ziyotek_bucket.id
   versioning_configuration {
-    status = "Enabled"
+    status = var.status
   }
 }
 
@@ -23,8 +23,8 @@ resource "aws_s3_bucket_object_lock_configuration" "ziyotek_bucket" {
 
   rule {
     default_retention {
-      mode = "COMPLIANCE"
-      days = 5
+      mode = var.retentation_mode
+      days = var.retentation_days
     }
   }
 }
@@ -37,13 +37,13 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "s3_encryption" {
 
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm = "AES256"
+      sse_algorithm = var.sse_algorithm
     }
   }
 }
 
 resource "aws_s3_bucket_acl" "ziyotek_bucket" {
   bucket = aws_s3_bucket.ziyotek_bucket.id
-  acl    = "public-read"
+  acl    = var.acl
 }
 
