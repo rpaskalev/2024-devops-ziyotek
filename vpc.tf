@@ -3,7 +3,7 @@ resource "aws_vpc" "ziyo_vpc" {
 
   tags = {
     Terraform = "true"
-    Name      = "Ziyo-2024-VPC"
+    Name      = "Ziyo-VPC"
   }
 }
 
@@ -11,6 +11,7 @@ resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.ziyo_vpc.id
 
   tags = {
+    name      = "ziyo_igw"
     Terraform = "true"
   }
 }
