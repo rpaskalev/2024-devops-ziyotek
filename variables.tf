@@ -29,10 +29,10 @@ variable "associate_public_ip_address" {
     default = true
 }
 
-variable "additional_sec_group" {
-    type = string
-    default = ""
-}
+# variable "additional_sec_group" {
+#     type = string
+#     default = null
+# }
 
 variable "ebs_optimize" {
     type = bool
@@ -50,4 +50,8 @@ variable "s3_tag" {
 variable "secondary_private_ips" {
     type = list(string)
     default = null
+}
+
+variable "az" {
+  default = null
 }
