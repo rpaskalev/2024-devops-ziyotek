@@ -7,15 +7,7 @@ resource "aws_s3_bucket" "zadah_state_bucket" {
   }
 }
 
-resource "aws_s3_bucket" "zadah_bucket_remote" {
-  bucket = "zadah-remote-bucket"
-
-  tags = {
-    Name        = "Zadah Remote"
-    Environment = "Remote"
-  }
-}
-
+#versioning
 
 resource "aws_s3_bucket_versioning" "s3_versioning" {
   bucket = aws_s3_bucket.zadah_state_bucket.id
@@ -24,7 +16,7 @@ resource "aws_s3_bucket_versioning" "s3_versioning" {
   }
 }
 
-
+#object lock for s3
 
 resource "aws_s3_bucket_object_lock_configuration" "zadah-state-bucket" {
   bucket = aws_s3_bucket.zadah_state_bucket.id
@@ -38,6 +30,7 @@ resource "aws_s3_bucket_object_lock_configuration" "zadah-state-bucket" {
   }
 }
 
+#s3 encryptions
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "s3_encryption" {
   bucket = aws_s3_bucket.zadah_state_bucket.id
@@ -49,7 +42,8 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "s3_encryption" {
   }
 }
 
-resource "aws_s3_bucket_acl" "zadah-state-bucket" {
+resource "aws_s3_bucket_acl" "example" {
   bucket = aws_s3_bucket.zadah_state_bucket.id
   acl    = "public-read"
 }
+
