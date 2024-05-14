@@ -9,14 +9,3 @@ resource "aws_instance" "web_server1" {
   //ebs_optimized = var.ebs_optimized
   tags = var.ec2_tags
 }  
-//Cloudwatch Alarm
-# resource "aws_cloudwatch_metric_alarm" "web_monitor" {
-#   alarm_name = "terraform-test-foobar5"
-#   comparison_operator = "GreaterThanOrEqualToThreshold"
-#   evaluation_periods = "CPUUtilization"
-#   namespace = "AWS/EC2"
-#   period = 120
-#   statistic = "Average"
-#   threshold = 80
-#   alarm_description = "This metric monitors ec2 cpu utilization"
-# }
