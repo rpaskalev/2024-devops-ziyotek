@@ -27,6 +27,7 @@ variable "days_retention" {
 variable "associate_public_ip_address" {
     type = bool
     default = true
+    # nullable = false
 }
 
 # variable "additional_sec_group" {
@@ -55,3 +56,4 @@ variable "secondary_private_ips" {
 variable "az" {
   default = null
 }
+

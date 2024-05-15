@@ -1,19 +1,9 @@
 resource "aws_vpc" "ziyo_vpc" {
   cidr_block = "10.10.0.0/16"
-
-  tags = {
-    Terraform = "true"
-    Name      = "Ziyo-VPC"
-  }
 }
 
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.ziyo_vpc.id
-
-  tags = {
-    name      = "ziyo_igw"
-    Terraform = "true"
-  }
 }
 
 resource "aws_route_table" "ziyo_rt" {
