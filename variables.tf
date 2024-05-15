@@ -1,10 +1,10 @@
 variable "s3_bucket_name" {
-
+  type= string
   default = "zadah-state-bucket"
 }
 
 variable "ec2_key" {
-
+  type = string
   default = "sam-key-terraform"
 }
 
@@ -31,12 +31,12 @@ variable "associate_public_ip_address" {
 
 variable "additional_sec_group" {
   type    = string
-  default = var.additional_sec_group
+  default = ""
 }
 
 variable "ebs_optimize" {
   type    = bool
-  default = true
+  default = null
 }
 
 variable "s3_tag" {
@@ -50,4 +50,13 @@ variable "s3_tag" {
 variable "secondary_private_ips" {
   type    = list(string)
   default = null
+}
+
+variable "mandatory_tags" {
+    type = map(string)
+    default = {
+        Terraform = true
+        Company = "ziyotek"
+        Class = "2024"
+    }
 }

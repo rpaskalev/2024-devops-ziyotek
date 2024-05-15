@@ -1,10 +1,10 @@
 resource "aws_instance" "web_server1" {
-  ami                         = "ami-07caf09b362be10b8"
+  ami                         = var.ec2_ami_id
   subnet_id                   = aws_subnet.ziyo_subnet_public.id
-  vpc_security_group_ids      = [aws_security_group.ziyo_security_group.id]
-  associate_public_ip_address = true
-  instance_type               = "t2.micro"
-  #key_name                    = "ferro-key.pem"
+  vpc_security_group_ids      = [aws_security_group.ziyo_security_group.id, var.additional_sec_group]
+  associate_public_ip_address = var.associate_public_ip_address
+  instance_type               = var.instance_type
+  key_name                    = var.ec2_key
 
 
   tags = {
