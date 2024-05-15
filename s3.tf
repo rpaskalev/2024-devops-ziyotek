@@ -1,6 +1,9 @@
 resource "aws_s3_bucket" "ziyotek_bucket" {
   bucket = var.s3_bucket_name
-  tags = var.s3_tag
+  tags = {
+    Company = "Microsoft"
+    Environment = "sbx"
+  }
 }
 
 # //versioning 
