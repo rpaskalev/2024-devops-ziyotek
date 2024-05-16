@@ -52,3 +52,6 @@ variable "secondary_private_ips" {
   default = null
 }
 
+variable "az" {
+  default = null
+}
