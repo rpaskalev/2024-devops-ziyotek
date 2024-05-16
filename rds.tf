@@ -25,6 +25,6 @@ resource "random_password" "password" {
 
 resource "aws_ssm_parameter" "foo" {
   name  = "ziyo_2024_class_rds_pass"
-  type  = "String"
+  type  = "SecureString"
   value = random_password.password.result
 }
