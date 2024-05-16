@@ -5,7 +5,8 @@ resource "aws_instance" "web_server1" {
   associate_public_ip_address = var.associate_public_ip_address
   instance_type               = var.instance_type
   key_name                    = var.ec2_key
-
+  ebs_optimized               = var.ebs_optimize
+  secondary_private_ips       = var.secondary_private_ips
 
   tags = {
     Name = "web_server1"

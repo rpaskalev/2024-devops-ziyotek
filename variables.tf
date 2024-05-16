@@ -52,11 +52,3 @@ variable "secondary_private_ips" {
   default = null
 }
 
-variable "mandatory_tags" {
-    type = map(string)
-    default = {
-        Terraform = true
-        Company = "ziyotek"
-        Class = "2024"
-    }
-}

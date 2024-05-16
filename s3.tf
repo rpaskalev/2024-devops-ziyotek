@@ -22,7 +22,7 @@ resource "aws_s3_bucket_object_lock_configuration" "ziyotek_bucket" {
   rule {
     default_retention {
       mode = "COMPLIANCE"
-      days = 5
+      days = var.days_retention
     }
   }
 }
