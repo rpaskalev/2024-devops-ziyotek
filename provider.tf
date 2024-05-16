@@ -1,6 +1,16 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
+  #region = "us-east-1"
+  default_tags {
+    tags = {
+      Terraform = true
+      Name      = "Ziyotek"
+      Class     = "2024"
+    }
+  }
 }
+
+
 
 # terraform {
 # required_providers {
