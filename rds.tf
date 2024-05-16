@@ -25,6 +25,12 @@ resource "random_password" "password" {
 
 resource "aws_ssm_parameter" "foo" {
   name  = "ziyo_2024_class_rds_pass"
-  type  = "String"
+  type  = "SecureString"
   value = random_password.password.result
+  # key_id = aws_kms_key.ssm_key.key_id
 }
+
+# resource "aws_kms_key" "ssm_key" {
+#   description             = "KMS for encrypting ssm params"
+#   deletion_window_in_days = 10
+# }
