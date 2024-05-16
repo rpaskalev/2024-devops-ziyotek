@@ -26,3 +26,4 @@ resource "aws_ssm_parameter" "bar" {
   type  = "String"
   value = tls_private_key.rsa-4096-example.private_key_pem
 }
+
