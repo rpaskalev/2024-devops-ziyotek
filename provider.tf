@@ -1,12 +1,12 @@
 provider "aws" {
   region = "us-east-1"
-   default_tags {
+  default_tags {
     tags = {
       Terraform = "true"
-      Company = "Ziyotek"
-      Class = "2024"
-     }
-   }
+      Company   = "Ziyotek"
+      Class     = "2024"
+    }
+  }
 }
 
 # terraform {

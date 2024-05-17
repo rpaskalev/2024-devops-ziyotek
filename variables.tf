@@ -1,33 +1,28 @@
 variable "s3_bucket_name" {
-    type = string
-    default = "rady-ziyo-2024-bucket"
+  type    = string
+  default = "rady-ziyo-2024-bucket-11111"
 }
 
-variable "ec2_key" {
-    type = string
-    default = "radostinpaskalev_key"
-}
-
-variable "ec2_ami_id" {
-    type = string
-    default = "ami-07caf09b362be10b8"
+variable "ssh_key" {
+  type    = string
+  default = "radostinpaskalev_key"
 }
 
 variable "instance_type" {
-    description = "assign value for instance compute"
-    type = string
-    default = "t2.micro"
+  description = "assign value for instance compute"
+  type        = string
+  default     = "t2.micro"
 }
 
 variable "days_retention" {
-  type = number
+  type    = number
   default = 5
 }
 
 variable "associate_public_ip_address" {
-    type = bool
-    default = true
-    # nullable = false
+  type    = bool
+  default = true
+  # nullable = false
 }
 
 # variable "additional_sec_group" {
@@ -36,12 +31,12 @@ variable "associate_public_ip_address" {
 # }
 
 variable "ebs_optimize" {
-    type = bool
-    default = null
+  type    = bool
+  default = null
 }
 
 variable "s3_tag" {
-  type = map
+  type = map(any)
   default = {
     Name        = "My bucket "
     Environment = "Dev"
@@ -49,8 +44,8 @@ variable "s3_tag" {
 }
 
 variable "secondary_private_ips" {
-    type = list(string)
-    default = null
+  type    = list(string)
+  default = null
 }
 
 variable "az" {

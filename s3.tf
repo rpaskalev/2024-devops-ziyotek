@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "ziyotek_bucket" {
-  bucket = var.s3_bucket_name
+  bucket = "${data.aws_region.current.id}-${var.s3_bucket_name}"
   tags = {
     Company = "Microsoft"
     Environment = "sbx"
