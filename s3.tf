@@ -1,7 +1,7 @@
-resource "aws_s3_bucket" "ziyotek_bucket" {
-  bucket = var.s3_bucket_name
-  tags = var.s3_tag
-}
+# resource "aws_s3_bucket" "ziyotek_bucket" {
+#   bucket = var.s3_bucket_name
+#   tags = var.s3_tag
+# }
 
 # //versioning 
 # resource "aws_s3_bucket_versioning" "s3_versioning" {

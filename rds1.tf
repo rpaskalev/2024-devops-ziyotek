@@ -27,4 +27,6 @@ resource "aws_ssm_parameter" "param_passw" {
   name  = "ziyo_2024_rds_pass"
   type  = "SecureString"
   value = random_password.password.result
+  #key_id = aws_kms_key.encrypted_key.key.id
 }
+ 

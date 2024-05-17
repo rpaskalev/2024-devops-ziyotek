@@ -1,11 +1,11 @@
 variable "s3_bucket_name" {
     type = string
-    default = "rady-ziyo-2024-bucket"
+    default = "iryna-ziyo-2024-bucket"
 }
 
 variable "ec2_key" {
     type = string
-    default = "radostinpaskalev_key"
+    default = "irynagl_key"
 }
 
 variable "ec2_ami_id" {
