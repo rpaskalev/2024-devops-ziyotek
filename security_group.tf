@@ -2,7 +2,13 @@ resource "aws_security_group" "ziyo_security_group" {
   name        = "ziyo_security_group"
   description = "Allow web inbound traffic and all outbound traffic"
   vpc_id      = aws_vpc.ziyo_vpc.id
-
+  ingress {
+    description = "All from VPC"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   tags = {
     Name = "ziyo_security_group"
 
@@ -30,8 +36,8 @@ resource "aws_vpc_security_group_ingress_rule" "allow_postgres" {
   to_port           = 5432
 
   tags = {
-    Name        = "allow_postgres"
-  
+    Name = "allow_postgres"
+
   }
 }
 
