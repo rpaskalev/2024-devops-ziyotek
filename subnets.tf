@@ -1,5 +1,5 @@
-resource "aws_subnet" "ziyo_subnet_public" {
-  vpc_id     = aws_vpc.ziyo_vpc.id
+resource "aws_subnet" "tory_subnet_public" {
+  vpc_id     = aws_vpc.tory_vpc.id
   cidr_block = "10.10.1.0/24"
 
   tags = {
@@ -8,8 +8,8 @@ resource "aws_subnet" "ziyo_subnet_public" {
   }
 }
 
-resource "aws_subnet" "ziyo_subnet_private" {
-  vpc_id     = aws_vpc.ziyo_vpc.id
+resource "aws_subnet" "tory_subnet_private" {
+  vpc_id     = aws_vpc.tory_vpc.id
   cidr_block = "10.10.2.0/24"
 
   tags = {

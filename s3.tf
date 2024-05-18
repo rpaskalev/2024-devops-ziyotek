@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "ziyotek_bucket" {
+resource "aws_s3_bucket" "sitoras3bucket" {
   bucket = var.s3_bucket_name
   tags = {
     Company = "Microsoft"

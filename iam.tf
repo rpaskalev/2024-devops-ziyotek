@@ -34,8 +34,8 @@ resource "aws_iam_policy" "ec2_policy" {
         ]
         Effect   = "Allow"
         Resource = [
-            "${aws_s3_bucket.ziyotek_bucket.arn}",
-            "${aws_s3_bucket.ziyotek_bucket.arn}/*"
+            "${aws_s3_bucket.sitoras3bucket.arn}",
+            "${aws_s3_bucket.sitoras3bucket.arn}/*"
         ]
       }
     ]

@@ -1,16 +1,16 @@
 variable "s3_bucket_name" {
     type = string
-    default = "rady-ziyo-2024-bucket"
+    default = "sitoras3bucket"
 }
 
 variable "ec2_key" {
     type = string
-    default = "radostinpaskalev_key"
+    default = "ziyotek-key"
 }
 
 variable "ec2_ami_id" {
     type = string
-    default = "ami-07caf09b362be10b8"
+    default = "ami-0bb84b8ffd87024d8"
 }
 
 variable "instance_type" {
@@ -43,7 +43,7 @@ variable "ebs_optimize" {
 variable "s3_tag" {
   type = map
   default = {
-    Name        = "My bucket "
+    Name        = "sitoras3bucket"
     Environment = "Dev"
   }
 }

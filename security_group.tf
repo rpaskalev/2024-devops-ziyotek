@@ -1,16 +1,16 @@
-resource "aws_security_group" "ziyo_security_group" {
-  name        = "ziyo_security_group"
+resource "aws_security_group" "tory_security_group" {
+  name        = "tory_security_group"
   description = "Allow web inbound traffic and all outbound traffic"
-  vpc_id      = aws_vpc.ziyo_vpc.id
+  vpc_id      = aws_vpc.tory_vpc.id
 
   tags = {
-    Name = "ziyo_security_group"
+    Name = "tory_security_group"
 
   }
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
-  security_group_id = aws_security_group.ziyo_security_group.id
+  security_group_id = aws_security_group.tory_security_group.id
   cidr_ipv4         = "0.0.0.0/0"
   from_port         = 22
   ip_protocol       = "tcp"
@@ -23,8 +23,8 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_postgres" {
-  security_group_id = aws_security_group.ziyo_security_group.id
-  cidr_ipv4         = aws_vpc.ziyo_vpc.cidr_block
+  security_group_id = aws_security_group.tory_security_group.id
+  cidr_ipv4         = aws_vpc.tory_vpc.cidr_block
   from_port         = 5432
   ip_protocol       = "tcp"
   to_port           = 5432
@@ -36,7 +36,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_postgres" {
 }
 
 resource "aws_vpc_security_group_egress_rule" "allow_outbound_traffic" {
-  security_group_id = aws_security_group.ziyo_security_group.id
+  security_group_id = aws_security_group.tory_security_group.id
   cidr_ipv4         = "0.0.0.0/0"
   ip_protocol       = "-1" # semantically equivalent to all ports
 
