@@ -5,7 +5,7 @@ variable "s3_bucket_name" {
 
 variable "ec2_key" {
     type = string
-    default = "ziyotek-key"
+    default = "tory-key"
 }
 
 variable "ec2_ami_id" {
