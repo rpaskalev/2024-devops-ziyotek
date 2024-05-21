@@ -1,7 +1,7 @@
 resource "aws_instance" "web_server1" {
   ami                         = var.ec2_ami_id 
   subnet_id                   = aws_subnet.ziyo_subnet_public.id
-  vpc_security_group_ids      = [aws_security_group.ziyo_security_group.id]
+  vpc_security_group_ids      = [aws_security_group.ziyo_security_group.id, data.aws_security_group.hw1.id, data.aws_security_group.hw2.id]
   associate_public_ip_address = var.associate_public_ip_address
   instance_type               = var.instance_type 
   key_name                    = aws_key_pair.deployer.key_name
