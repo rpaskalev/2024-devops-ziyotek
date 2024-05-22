@@ -1,5 +1,5 @@
 resource "aws_iam_role" "ec2_role" {
-  name = "ec2_role_to_test_s3_access"
+  name = "testing-lifecycles" #"ec2_role_to_test_s3_access"
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
@@ -16,6 +16,9 @@ resource "aws_iam_role" "ec2_role" {
       },
     ]
   })
+  lifecycle {
+     create_before_destroy = true
+  }
 }
 
 resource "aws_iam_policy" "ec2_policy" {
