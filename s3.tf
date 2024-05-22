@@ -4,6 +4,9 @@ resource "aws_s3_bucket" "ziyotek_bucket" {
     Company = "Microsoft"
     Environment = "sbx"
   }
+  lifecycle {
+    ignore_changes = [tags]
+  }
 }
 
 # //versioning 
