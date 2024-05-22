@@ -27,3 +27,8 @@ resource "aws_route_table_association" "ziyo_a" {
 }
 
 #local resource address + attribute refrence
+
+resource "aws_route_table_association" "ziyo_a_2" {
+  subnet_id      = aws_subnet.ziyo_subnet_public_2.id
+  route_table_id = aws_route_table.ziyo_rt.id
+}

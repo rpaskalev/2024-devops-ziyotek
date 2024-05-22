@@ -3,4 +3,5 @@ sudo yum update -y
 sudo yum install httpd -y
 sudo systemctl start httpd
 sudo systemctl enable httpd
-sudo echo "</h1> At $(hostname -f) </h1>" > /var/www/html/index.html
+sudo mkdir /var/www/html/static
+sudo echo "</h1> YOU HAVE REACHED THE STATIC PAGE </h1>" > /var/www/html/static/index.html
