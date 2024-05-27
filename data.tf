@@ -12,8 +12,8 @@ output "show_me_the_ami" {
   value = data.aws_ami.example.image_id
 }
 
-data "aws_key_pair" "example" {
-  key_name = var.ssh_key
-}
+# data "aws_key_pair" "example077" {
+#   key_name = var.ssh_key
+# }
 
 data "aws_region" "current" {}

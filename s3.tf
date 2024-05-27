@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "ziyotek_bucket" {
   bucket = "${data.aws_region.current.id}-${var.s3_bucket_name}"
   tags = {
-    Company = "Microsoft"
+    Company     = "Microsoft"
     Environment = "sbx"
   }
   lifecycle {
