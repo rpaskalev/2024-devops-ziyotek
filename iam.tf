@@ -17,7 +17,7 @@ resource "aws_iam_role" "ec2_role" {
     ]
   })
   lifecycle {
-     create_before_destroy = true
+    create_before_destroy = true
   }
 }
 
@@ -35,10 +35,10 @@ resource "aws_iam_policy" "ec2_policy" {
         Action = [
           "s3:PutObject"
         ]
-        Effect   = "Allow"
+        Effect = "Allow"
         Resource = [
-            "${aws_s3_bucket.ziyotek_bucket.arn}",
-            "${aws_s3_bucket.ziyotek_bucket.arn}/*"
+          "${aws_s3_bucket.ziyotek_bucket.arn}",
+          "${aws_s3_bucket.ziyotek_bucket.arn}/*"
         ]
       }
     ]

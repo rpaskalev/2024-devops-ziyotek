@@ -1,12 +1,12 @@
 locals {
-    app_name = var.my_var
-    description = "${local.app_name}-ziyotek"
-    my_local_tags = {
-        somethng = "nothing"
-    }
+  app_name    = var.my_var
+  description = "${local.app_name}-ziyotek"
+  my_local_tags = {
+    somethng = "nothing"
+  }
 }
 
-variable "my_var" { default = "web_tier"}
+variable "my_var" { default = "web_tier" }
 
 # resource "aws_launch_configuration" "ziyo_lc" {
 #   name                        = local.app_name

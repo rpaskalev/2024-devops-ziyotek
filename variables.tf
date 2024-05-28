@@ -1,11 +1,11 @@
 variable "s3_bucket_name" {
   type    = string
-  default = "rady-ziyo-2024-bucket-11111"
+  default = "rady-michaelrustam-ziyo-2024-bucket"
 }
 
 variable "ssh_key" {
   type    = string
-  default = "radostinpaskalev_key"
+  default = "ziyotek_key"
 }
 
 variable "instance_type" {
