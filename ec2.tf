@@ -8,7 +8,7 @@ resource "aws_instance" "web_server1" {
   instance_type               = "t3.micro" #var.instance_type 
   key_name                    = data.aws_key_pair.example.key_name #aws_key_pair.deployer.key_name
   ebs_optimized               = var.ebs_optimize
-  secondary_private_ips       = var.secondary_private_ips
+  secondary_private_ips       = null
   availability_zone           = var.az
   iam_instance_profile        = aws_iam_instance_profile.test_profile.id
   # user_data = <<EOF
@@ -39,7 +39,7 @@ resource "aws_key_pair" "deployer" {
 
 resource "aws_ssm_parameter" "bar" {
   name  = "test_ssh_key_deleteme"
-  type  = "String"
+  type  = "SecureString"
   value = tls_private_key.rsa-4096-example.private_key_pem
 }
 
