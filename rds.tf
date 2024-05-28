@@ -1,4 +1,5 @@
-resource "aws_db_instance" "default0" {
+resource "aws_db_instance" "default" {
+  
   allocated_storage      = 10
   db_name                = "ziyo-mr"
   engine                 = "postgres"

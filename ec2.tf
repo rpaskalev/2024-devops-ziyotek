@@ -5,7 +5,7 @@ resource "aws_instance" "web_server1" {
     aws_security_group.ziyo_security_group.id,
   ]
   associate_public_ip_address = var.associate_public_ip_address
-  instance_type               = "t3.micro"                         #var.instance_type 
+  instance_type               = "t3.micro"                     #var.instance_type 
   key_name                    = aws_key_pair.deployer.key_name # data.aws_key_pair.example077.key_name
   ebs_optimized               = var.ebs_optimize
   secondary_private_ips       = var.secondary_private_ips
